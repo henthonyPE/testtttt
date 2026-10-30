@@ -1,0 +1,98 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #222;
+}
+
+.app { max-width: 1000px; margin: 0 auto; padding: 16px; }
+h1 { text-align: center; color: #d32f2f; }
+
+/* Barra de busca e filtro */
+.barra { display: flex; gap: 8px; margin-bottom: 12px; }
+.barra input { flex: 1; }
+.barra input, .barra select { padding: 10px; font-size: 16px; }
+.barra select { text-transform: capitalize; }
+
+button { padding: 8px 14px; cursor: pointer; }
+.info { text-align: center; }
+.mensagem { text-align: center; font-size: 18px; }
+.erro { color: #c62828; }
+
+/* Grid responsivo: o número de colunas se ajusta sozinho à largura da tela */
+.lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+.card:hover { transform: translateY(-3px); }
+.card h3 { margin: 4px 0; text-transform: capitalize; }
+.numero { color: #777; font-size: 14px; }
+
+.tipos { display: flex; justify-content: center; gap: 4px; flex-wrap: wrap; }
+.tipo {
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  background: #aaa;
+  color: white;
+  text-transform: capitalize;
+}
+.tipo.fire { background: #f57c00; }
+.tipo.water { background: #1e88e5; }
+.tipo.grass { background: #43a047; }
+.tipo.electric { background: #fbc02d; }
+.tipo.poison { background: #8e24aa; }
+.tipo.flying { background: #5c6bc0; }
+.tipo.bug { background: #7cb342; }
+.tipo.ground { background: #8d6e63; }
+.tipo.psychic { background: #ec407a; }
+
+.paginacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+/* Modal */
+.fundo {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+.modal {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+.modal h2 { text-transform: capitalize; margin-top: 0; }
+.modal ul { padding-left: 20px; text-transform: capitalize; }
+.sprites { display: flex; justify-content: center; }
+.fechar { position: absolute; top: 10px; right: 10px; }
+
+/* Celular: busca e filtro um embaixo do outro */
+@media (max-width: 600px) {
+  .barra { flex-direction: column; }
+}
